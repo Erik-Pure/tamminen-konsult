@@ -93,7 +93,7 @@
         font-size: clamp(13px, 19.036px + 100vw * 0.0076, 22px);
         min-height: 54px;
         display: flex;
-        align-items: end;
+        align-items: flex-end;
       }
       .posterImage {
         margin: 20px 0;

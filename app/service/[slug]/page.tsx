@@ -33,9 +33,10 @@ async function getData(slug: string) {
 export default async function Service({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const data: service = await getData(params.slug);
+  const { slug } = await params;
+  const data: service = await getData(slug);
   return (
     <div className="servicePage">
       <div className="serviceHero">
