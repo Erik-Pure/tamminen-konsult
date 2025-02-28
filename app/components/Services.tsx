@@ -4,6 +4,9 @@ import { client, urlFor } from "../lib/sanity";
 import Link from "next/link";
 import "../services.scss";
 
+export const revalidate = 300;
+export const dynamic = "force-dynamic";
+
 async function getData() {
   const query = `*[_type == 'services'] {
     title,
@@ -24,7 +27,6 @@ export default async function Services() {
 
   return (
     <section className="servicesOverview" id="services">
-      {/* <h2>Våra tjänster</h2> */}
       <div className="serviceGrid">
         {data.map((service, idx) => (
           <Link

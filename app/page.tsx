@@ -3,7 +3,9 @@ import Services from "./components/Services";
 import { client } from "./lib/sanity";
 import { landingPage } from "./lib/interface";
 import Employees from "./components/Employees";
-import { ta } from "date-fns/locale";
+
+export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 async function getData() {
   const query = `*[_type == 'landingPage'][0] {

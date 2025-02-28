@@ -4,6 +4,9 @@ import { client, urlFor } from "../lib/sanity";
 import Image from "next/image";
 import "../employees.scss";
 
+export const revalidate = 300;
+export const dynamic = "force-dynamic";
+
 async function getEmployees() {
   const query = `*[_type == 'employee'] {
     title,
@@ -21,9 +24,6 @@ export default async function Employees() {
   const data: employee[] = await getEmployees();
   return (
     <div>
-      {/* <h4>Om Tamminen Konsult AB</h4>
-      <p>Lorem ipsum dolor et al</p>
-      <h2>Anställda</h2> */}
       <div className="employees" id="contact">
         {data.map((employee) => (
           <div key={employee.title} className="employee">

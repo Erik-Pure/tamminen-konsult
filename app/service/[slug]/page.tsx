@@ -5,6 +5,9 @@ import Image from "next/image";
 import "../../services.scss";
 import "../../employees.scss";
 
+export const revalidate = 300;
+export const dynamic = "force-dynamic";
+
 async function getData(slug: string) {
   const query = `*[_type == 'services' && slug.current == '${slug}'] {
     slug,
