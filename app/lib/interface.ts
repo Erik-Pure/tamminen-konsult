@@ -1,5 +1,3 @@
-import employee from "@/sanity/schemaTypes/employee";
-
 export interface landingPage {
     title: string;
     ingress: any;
