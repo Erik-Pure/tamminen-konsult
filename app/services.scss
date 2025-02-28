@@ -1,0 +1,194 @@
+.servicePage {
+  background-color: #f5f5f5;
+  .serviceHero {
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    .heroBg {
+      position: absolute;
+      left: 0;
+      opacity: 0.6;
+    }
+    .heroCopy {
+      position: relative;
+      max-width: 960px;
+      text-align: center;
+      padding: 100px 20px;
+      z-index: 1;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      h1 {
+        font-size: clamp(24px, 28.481px + 90vw * 0.0321, 80px);
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.serviceBody {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-top: -50px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  .btn {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    img {
+      margin-right: 6px;
+    }
+  }
+  p {
+    line-height: 1.3em;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  h5 {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+}
+
+.servicesOverview {
+  padding: 120px 0;
+
+  .serviceGrid {
+    max-width: 1280px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    box-sizing: border-box;
+    gap: 60px;
+    .service {
+      grid-column: span 4;
+      h3 {
+        font-size: clamp(13px, 19.036px + 100vw * 0.0076, 22px);
+        min-height: 54px;
+        display: flex;
+        align-items: end;
+      }
+      .posterImage {
+        margin: 20px 0;
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 110%;
+        background-color: #000;
+        border-radius: 15px;
+        overflow: hidden;
+        .icon {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 30%;
+          height: 30%;
+          opacity: 0;
+          transition: all 0.5s ease;
+        }
+        .poster {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: all 0.7s ease;
+        }
+        .plusSign {
+          background-color: var(--primary);
+          height: 42px;
+          width: 42px;
+          border-radius: 50%;
+          position: absolute;
+          right: 10px;
+          bottom: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0 0 0;
+          &:hover {
+            background-color: var(--primary-dark);
+          }
+          svg {
+            fill: #fff;
+          }
+        }
+      }
+      &:hover {
+        .posterImage {
+          .icon {
+            top: 50%;
+            /* opacity: 1; */
+          }
+          .poster {
+            transform: scale(1.1);
+            opacity: 0.8;
+          }
+          .plusSign {
+            transform: rotate(180deg);
+            scale: 1.1;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+.contactPersons {
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 920px) {
+  .servicesOverview {
+    .serviceGrid {
+      gap: 30px;
+      .service {
+        grid-column: span 6;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .servicesOverview {
+    .serviceGrid {
+      .service {
+        grid-column: span 12;
+        .posterImage {
+          padding-bottom: 60%;
+        }
+      }
+    }
+  }
+}

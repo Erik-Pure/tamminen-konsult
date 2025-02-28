@@ -1,95 +1,56 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import Services from "./components/Services";
+import { client } from "./lib/sanity";
+import { landingPage } from "./lib/interface";
+import Employees from "./components/Employees";
+import { ta } from "date-fns/locale";
 
-export default function Home() {
+async function getData() {
+  const query = `*[_type == 'landingPage'][0] {
+    title,
+    ingress, }`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+export default async function Home() {
+  const data: landingPage = await getData();
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main>
+      <div className="hero">
+        <div className="heroCopy">
+          <h1>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="img/tamminen-logo-black.svg"
+              alt={data.title}
+              width={420}
+              height={140}
+              style={{ width: "80%", height: "auto" }}
             />
-            Deploy now
+          </h1>
+          <h3>
+            Vi är erfarna konsulter och erbjuder expertis inom brandskydd,
+            fuktsäkerhet och bygg- och projektledning.
+          </h3>
+          <a className="btn outline" href="#services">
+            Tjänster
           </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
+          <a className="btn" href="#contact">
+            Kontakt
           </a>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="heroBgVideo">
+          <video autoPlay muted loop playsInline>
+            <source src="vid/hero_video.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div className="mainContent">
+        <Services />
+        <Employees />
+      </div>
+    </main>
   );
 }
