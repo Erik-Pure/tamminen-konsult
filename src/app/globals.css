@@ -1852,15 +1852,19 @@ h4 {
 
   .tjanster-service-card {
     grid-template-columns: 1fr;
+    padding: 0;
+    overflow: hidden;
   }
 
   .tjanster-service-media {
-    width: min(100%, 260px);
-    justify-self: center;
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+    border-radius: 0;
   }
 
   .tjanster-service-content {
-    padding: 0;
+    padding: 22px;
   }
 
   .homev2-process-cell:not(:last-child) {
