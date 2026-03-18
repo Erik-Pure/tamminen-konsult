@@ -1,9 +1,33 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLinkIcon } from "@/components/external-link-icon";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { company, profile } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Om företaget",
+  description:
+    "Om Tamminen Konsult AB och Rebecka Tamminen, med erfarenhet inom byggledning, projektledning och fuktsäkerhet.",
+  alternates: {
+    canonical: "/om-oss",
+  },
+  openGraph: {
+    title: "Om företaget | Tamminen Konsult AB",
+    description:
+      "Om Tamminen Konsult AB och Rebecka Tamminen, med erfarenhet inom byggledning, projektledning och fuktsäkerhet.",
+    url: "/om-oss",
+    images: [
+      {
+        url: "/brand/helmet-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Om Tamminen Konsult AB",
+      },
+    ],
+  },
+};
 
 export default function OmOssPage() {
   return (

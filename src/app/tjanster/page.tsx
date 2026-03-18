@@ -1,9 +1,33 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ExternalLinkIcon } from "@/components/external-link-icon";
 import { services } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Tjänster",
+  description:
+    "Läs mer om tjänster inom bygg- och projektledning, Diplomerad Fuktsakkunnig, fuktsäkerhetsansvar samt byggdoktor.",
+  alternates: {
+    canonical: "/tjanster",
+  },
+  openGraph: {
+    title: "Tjänster | Tamminen Konsult AB",
+    description:
+      "Läs mer om tjänster inom bygg- och projektledning, Diplomerad Fuktsakkunnig, fuktsäkerhetsansvar samt byggdoktor.",
+    url: "/tjanster",
+    images: [
+      {
+        url: "/brand/tjansterhero.png",
+        width: 1200,
+        height: 630,
+        alt: "Tjänster hos Tamminen Konsult AB",
+      },
+    ],
+  },
+};
 
 function getServiceImage(title: string) {
   const key = title.toLowerCase();

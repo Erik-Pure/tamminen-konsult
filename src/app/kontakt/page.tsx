@@ -1,7 +1,31 @@
+import type { Metadata } from "next";
 import { ExternalLinkIcon } from "@/components/external-link-icon";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { company } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Kontakt",
+  description:
+    "Kontakta Tamminen Konsult AB för dialog om bygg- och projektledning samt fuktsäkerhetsfrågor.",
+  alternates: {
+    canonical: "/kontakt",
+  },
+  openGraph: {
+    title: "Kontakt | Tamminen Konsult AB",
+    description:
+      "Kontakta Tamminen Konsult AB för dialog om bygg- och projektledning samt fuktsäkerhetsfrågor.",
+    url: "/kontakt",
+    images: [
+      {
+        url: "/brand/helmet-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Kontakt Tamminen Konsult AB",
+      },
+    ],
+  },
+};
 
 export default function KontaktPage() {
   return (

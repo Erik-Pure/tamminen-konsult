@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/content";
@@ -5,6 +6,29 @@ import { MetricsInteractive } from "@/components/metrics-interactive";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ScrollReveal } from "@/components/scroll-reveal";
+
+export const metadata: Metadata = {
+  title: "Startsida",
+  description:
+    "Bygg- och projektledning med tydlig styrning och fuktsäkerhet för byggherrar, BRF:er, fastighetsägare och entreprenörer.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Tamminen Konsult AB",
+    description:
+      "Bygg- och projektledning med tydlig styrning och fuktsäkerhet för byggherrar, BRF:er, fastighetsägare och entreprenörer.",
+    url: "/",
+    images: [
+      {
+        url: "/brand/startpage-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Tamminen Konsult AB startsida",
+      },
+    ],
+  },
+};
 
 function ServiceIcon({ title }: { title: string }) {
   const key = title.toLowerCase();
