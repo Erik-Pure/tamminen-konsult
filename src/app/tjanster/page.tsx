@@ -83,6 +83,7 @@ export default function TjansterPage() {
                         alt=""
                         width={520}
                         height={520}
+                        sizes="(max-width: 900px) 100vw, 240px"
                         className="tjanster-service-media-image"
                       />
                       ) : (

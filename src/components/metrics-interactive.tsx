@@ -73,6 +73,7 @@ export function MetricsInteractive() {
           alt="Rebecka Tamminen i arbetskläder"
           width={760}
           height={1020}
+          sizes="(max-width: 900px) 100vw, 42vw"
           className="homev2-metrics-cutout"
         />
       </article>

@@ -12,6 +12,26 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Tamminen Konsult AB",
+  legalName: "Tamminen Konsult AB",
+  url: "https://tamminenab.se",
+  logo: "https://tamminenab.se/brand/tamminen-logo.svg",
+  image: "https://tamminenab.se/brand/startpage-hero.png",
+  telephone: "+46 70-277 17 40",
+  email: "rebecka@tamminenab.se",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Utsiktsvägen 6",
+    postalCode: "605 70",
+    addressLocality: "Svartinge",
+    addressCountry: "SE",
+  },
+  sameAs: ["https://www.linkedin.com/in/rebecka-tamminen-240b02a5/"],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://tamminenab.se"),
   title: {
@@ -72,6 +92,10 @@ export default function RootLayout({
   return (
     <html lang="sv">
       <body className={`${spaceGrotesk.variable} ${inter.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {children}
       </body>
     </html>

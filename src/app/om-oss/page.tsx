@@ -55,6 +55,7 @@ export default function OmOssPage() {
                   alt="Porträtt av Rebecka Tamminen"
                   width={740}
                   height={920}
+                  sizes="(max-width: 900px) 100vw, 42vw"
                   className="homev2-about-feature-image"
                 />
               </article>

@@ -176,6 +176,7 @@ export default function Home() {
                     alt="Vit hjälm med Tamminen-logotyp"
                     width={740}
                     height={920}
+                    sizes="(max-width: 900px) 100vw, 45vw"
                     className="homev2-about-feature-image"
                   />
                   <div className="homev2-about-feature-overlay" />
