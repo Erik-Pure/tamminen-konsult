@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ExternalLinkIcon } from "@/components/external-link-icon";
+import { AboutPortraitCard } from "@/components/about-portrait-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { company, profile } from "@/lib/content";
@@ -49,16 +49,7 @@ export default function OmOssPage() {
         <section className="section">
           <div className="container">
             <div className="homev2-about-showcase">
-              <article className="homev2-about-feature about-page-feature-static">
-                <Image
-                  src="/brand/becca-pro.png"
-                  alt="Porträtt av Rebecka Tamminen"
-                  width={740}
-                  height={920}
-                  sizes="(max-width: 900px) 100vw, 42vw"
-                  className="homev2-about-feature-image"
-                />
-              </article>
+              <AboutPortraitCard />
 
               <div className="homev2-about-info-grid about-page-info-grid">
                 <article className="homev2-about-info-card">
