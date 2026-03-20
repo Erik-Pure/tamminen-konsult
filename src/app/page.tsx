@@ -129,16 +129,6 @@ export default function Home() {
                     <Link href="/tjanster" className="card-link">
                       Läs mer
                     </Link>
-                  {"resourceHref" in service && service.resourceHref ? (
-                    <a
-                      href={service.resourceHref}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="card-link"
-                    >
-                      {service.resourceLabel ?? "Fuktsakkunniga i Sverige"}
-                    </a>
-                  ) : null}
                   </article>
                 ))}
               </div>
