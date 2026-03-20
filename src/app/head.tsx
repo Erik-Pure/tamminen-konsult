@@ -5,7 +5,7 @@ export default function Head() {
         rel="preload"
         as="image"
         href="/brand/startpage-hero.png"
-        imagesrcset="/brand/startpage-hero.png 1x"
+        imageSrcSet="/brand/startpage-hero.png 1x"
       />
     </>
   );
